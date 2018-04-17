@@ -1,4 +1,4 @@
-package lambda
+package functions
 
 import com.natpryce.hamkrest.assertion.assert
 import com.natpryce.hamkrest.equalTo
@@ -53,10 +53,10 @@ class FunctionLiterals {
             }
         }
 
-//        val applyDamage
+        // val applyDamage
         val fred = Goblin(10)
 
-//        assert.that(applyDamage(fred, 1), equalTo(9))
+        // assert.that(fred.applyDamage(1), equalTo(9))
     }
 
     @Test

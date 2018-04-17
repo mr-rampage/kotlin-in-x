@@ -1,4 +1,4 @@
-package lambda
+package functions
 
 import com.natpryce.hamkrest.assertion.assert
 import com.natpryce.hamkrest.equalTo
