@@ -1,5 +1,6 @@
 package functions
 
+import collections.Person
 import com.natpryce.hamkrest.assertion.assert
 import com.natpryce.hamkrest.equalTo
 import org.junit.jupiter.api.Disabled
@@ -68,4 +69,19 @@ class LambdaParameters {
 
     }
 
+    @Test
+    fun `should be able to destructure a parameter` () {
+        val fred = Person("male", "Fred Flintstone")
+        val greeting: (Person) -> String = { (gender, name) -> "Hello, $gender human $name" }
+
+        assert.that(greeting(fred), equalTo("Hello, male human Fred Flintstone"))
+    }
+
+    @Test
+    fun `but what do you think happens here?` () {
+        val fred = Person("male", "Fred Flintstone")
+        val greeting: (Person) -> String = { (name, gender) -> "Hello, $gender human $name" }
+
+        assert.that(greeting(fred), equalTo("Hello, male human Fred Flintstone"), { "Javascript destructuring is superior"})
+    }
 }
